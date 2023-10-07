@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM система</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+  <header class="header">
+    <div class="flex container">
+      <a class="header__logo" href="" aria-label="Логотип">
+        <svg viewBox="0 0 50 50" width="50" height="50">
+          <use xlink:href="imgs/mainSvg.svg#logo"></use>
+        </svg>
+      </a>
+      <input class="header__input" type="search" placeholder="Введите запрос">
+    </div>
+  </header>
+  <main id="main" class="main">
+    <div class="container">
+      <h1 class="main-title">Клиенты</h1>
+      <table id="main-table" class="main-table">
+        <thead class="main-table__head">
+          <tr class="main-table__header-row">
+            <th class="main-table__header-title id">
+              <button class="flex main-table__column-btn main-table__id-btn">
+                <span class="main-table__title-text">ID
+                  <svg fill="#9873FF" opacity="0.7" width="12" height="12">
+                    <use xlink:href="imgs/mainSvg.svg#arrow"></use>
+                  </svg>
+                </span>
+              </button>
+            </th>
+            <th class="main-table__header-title fio">
+              <button class="flex main-table__column-btn main-table__fio-btn">
+              <span class="main-table__title-text">Фамилия Имя Отчество
+                <svg fill="#9873FF" opacity="0.7" width="12" height="12">
+                  <use xlink:href="imgs/mainSvg.svg#arrow"></use>
+                </svg>
+                <span class="main-table__fio-letters">А-Я</span>
+              </span>
+              </button>
+            </th>
+            <th class="main-table__header-title created">
+              <button class="flex main-table__column-btn main-table__created-btn">
+              <span class="main-table__title-text">Дата и время создания
+                <svg fill="#9873FF" opacity="0.7" width="12" height="12">
+                  <use xlink:href="imgs/mainSvg.svg#arrow"></use>
+                </svg>
+              </span>
+              </button>
+            </th>
+            <th class="main-table__header-title edited">
+              <button class="flex main-table__column-btn main-table__edited-btn">
+                <span class="main-table__title-text">Последние изменения
+                  <svg fill="#9873FF" opacity="0.7" width="12" height="12">
+                    <use xlink:href="imgs/mainSvg.svg#arrow"></use>
+                  </svg>
+                </span>
+              </button>
+            </th>
+            <th class="main-table__header-title contacts">
+              <button class="flex main-table__column-btn main-table__contacts-btn">
+                <span class="main-table__title-text">Контакты</span>
+              </button>
+            </th>
+            <th class="main-table__header-title btns">
+              <button class="flex main-table__column-btn main-table__actions-btn">
+                <span class="main-table__title-text">Действия</span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="main-table__body">
+        </tbody>
+      </table>
+      <div class="null-body">
+        <svg class="preloader" width="40" height="40">
+          <use xlink:href="imgs/mainSvg.svg#loader"></use>
+        </svg>
+      </div>
+      <button class="flex btn-append">
+        <svg width="23" height="16" fill="#9873FF">
+          <use xlink:href="imgs/mainSvg.svg#new-client"></use>
+        </svg>
+        Добавить клиента
+      </button>
+    </div>
+    <form id="new-client-form" class="new-client-form form invisible">
+      <div class="flex new-client-form__capture">
+        <h2 class="form-title new-client-form__title">Новый клиент</h2>
+        <button type="button" class="close-btn" aria-label="Закрыть">
+          <svg fill="#B0B0B0" width="29" height="29">
+            <use xlink:href="imgs/mainSvg.svg#close-form"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="new-client-form__client-form client-form">
+        <label class="client-form__label"> 
+          <input class="client-form__input surname" required type="text" placeholder=" ">
+          <span class="client-form__placeholder">Фамилия<span class="client-form__placeholder-sign">*</span></span>
+        </label>
+        <label class="client-form__label">
+          <input class="client-form__input name" required type="text" placeholder=" ">
+          <span class="client-form__placeholder">Имя<span class="client-form__placeholder-sign">*</span></span>
+        </label>
+        <label class="client-form__label">
+          <input class="client-form__input lastname" type="text" placeholder=" ">
+          <span class="client-form__placeholder">Отчество</span>
+        </label>
+        <div class="client-form__add-contact-area">
+          <button type="button" class="flex client-form__add-contact-btn">
+            <svg fill="#9873FF" width="16" height="16">
+              <use xlink:href="imgs/mainSvg.svg#add-contact"></use>
+            </svg>
+            Добавить контакт
+          </button>
+        </div>
+        <button class="send-btn" type="submit">Сохранить</button>
+        <button type="button" class="cancel-btn">Отмена</button>
+      </div>
+    </form>
+    <form id="delete-form" class="delete-form form invisible">
+      <button type="button" class="close-btn"  aria-label="Закрыть">
+        <svg fill="#B0B0B0" width="29" height="29">
+          <use xlink:href="imgs/mainSvg.svg#close-form"></use>
+        </svg>
+      </button>
+      <h2 class="form-title delete-form__title">Удалить клиента</h2>
+      <p class="delete-form__text">Вы&nbsp;действительно хотите удалить данного клиента?</p>
+      <button class="send-btn" type="submit">Удалить</button>
+      <button type="button" class="cancel-btn">Отмена</button>
+    </form>
+    <form id="edit-form" class="edit-form form invisible">
+      <button type="button" class="close-btn"  aria-label="Закрыть">
+        <svg fill="#B0B0B0" width="29" height="29">
+          <use xlink:href="imgs/mainSvg.svg#close-form"></use>
+        </svg>
+      </button>
+      <div class="flex edit-form__capture">
+        <h2 class="form-title">Изменить данные</h2>
+        <span class="edit-form__id"></span>
+      </div>
+      <div class="edit-form__client-form client-form">
+        <label class="client-form__label"> 
+          <input class="client-form__input surname" required type="text" placeholder=" ">
+          <span class="client-form__placeholder">Фамилия<span class="client-form__placeholder-sign">*</span></span>
+        </label>
+        <label class="client-form__label">
+          <input class="client-form__input name" required type="text" placeholder=" ">
+          <span class="client-form__placeholder">Имя<span class="client-form__placeholder-sign">*</span></span>
+        </label>
+        <label class="client-form__label">
+          <input class="client-form__input lastname" type="text" placeholder=" ">
+          <span class="client-form__placeholder">Отчество</span>
+        </label>
+        <div class="client-form__add-contact-area">
+          <button type="button" class="flex client-form__add-contact-btn">
+            <svg fill="#9873FF" width="16" height="16">
+              <use xlink:href="imgs/mainSvg.svg#add-contact"></use>
+            </svg>Добавить контакт
+          </button>
+        </div>
+        <button class="send-btn" type="submit">Сохранить</button>
+        <button type="button" class="cancel-btn">Удалить клиента</button>
+      </div>
+    </form>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

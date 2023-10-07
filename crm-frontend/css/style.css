@@ -1,0 +1,830 @@
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans")
+  url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+  url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans")
+  url("../fonts/OpenSans-SemiBold.woff2") format("woff2"),
+  url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans")
+  url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+  url("../fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "OpenSans", sans-serif;
+}
+
+/* COMMON */
+
+a, h1, h2, h3, h4, h5, h6, p, button, input {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+a, button {
+  cursor: pointer;
+}
+
+:root {
+  --grey: #B0B0B0;
+  --bright-grey: #F5F5F5;
+  --purple: #9873FF;
+  --dark-purple: #310062;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.display-none {
+  display: none;
+}
+
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: loading 1500ms linear;
+  animation-iteration-count: infinite;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 20px;
+}
+
+
+
+/* HEADER */
+
+.header {
+  padding: 23px 0;
+  background: #FFF;
+  box-shadow: 0px 3.38629px 5.64383px 0px rgba(176, 190, 197, 0.32), 0px 9.03012px 27.09036px 0px rgba(176, 190, 197, 0.32);
+}
+
+.header__logo {
+  margin-right: 53px;
+}
+
+.header__logo svg {
+  transition: opacity .2s ease-in-out, filter .2s ease-in-out;
+}
+
+.header__logo:hover svg{
+  opacity: 0.7;
+}
+
+.header__logo:active svg{
+  filter: brightness(70%);
+}
+
+.header__logo:focus-visible {
+  outline: 0;
+}
+
+.header__logo:focus-visible svg {
+  border-radius: 100%;
+  border: 1px solid var(--dark-purple);
+}
+
+.header__input {
+  padding: 12px 16px;
+  width: 581px;
+  border: 1px solid rgba(51, 51, 51, 0.20);
+  color: var(--grey);
+  transition: border .2s ease-in-out, outline .2s ease-in-out;
+}
+
+.header__input:focus-visible {
+  outline: 1px solid var(--purple);
+}
+
+.header__input::placeholder {
+  color: var(--grey);
+}
+
+/* MAIN */
+
+.main {
+  padding: 40px 0;
+  background: var(--bright-grey);
+}
+
+.main-title {
+  margin-bottom: 10px;
+}
+
+
+/* TABLE */
+
+.main-table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  background-color: var(--bright-grey);
+}
+
+.main-table__header-title {
+  padding: 10px;
+  text-align: start;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  color:var(--grey);
+}
+
+.main-table__header-title.id {
+  width: 100px;
+  min-width: 28px;
+}
+
+.main-table__header-title.fio {
+  min-width: 100px;
+  width: 240px;
+}
+
+.main-table__column-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  align-items: end;
+}
+
+.main-table__title-text {
+  color: var(--grey);
+  text-align: start;
+  transition: color .2s ease-in-out, outline .2s ease-in-out;
+}
+
+.main-table__title-text svg {
+  vertical-align: bottom;
+  transition: opacity .2s ease-in-out, fill .2s ease-in-out;
+}
+
+.main-table__column-btn:hover .main-table__title-text {
+  color: var(--purple);
+}
+
+.main-table__column-btn:active .main-table__title-text{
+  color: var(--dark-purple);
+}
+
+.main-table__column-btn:focus-visible {
+  color: var(--dark-purple);
+  outline: 1px solid var(--dark-purple);
+  outline-offset: 3px;
+}
+
+.main-table__column-btn:hover svg {
+  opacity: 1;
+}
+
+.main-table__column-btn:active svg {
+  fill: var(--dark-purple);
+}
+
+.main-table__column-btn:focus-visible svg {
+  outline: 0;
+  fill: var(--dark-purple);
+}
+
+.main-table__fio-letters {
+  color: var(--purple);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.main-table__head {
+  background-color: var(--bright-grey);
+}
+
+
+.main-table__header-title.created,
+.main-table__header-title.edited {
+  width: 120px;
+}
+
+.main-table__header-title.contacts {
+  width: 110px;
+}
+
+.main-table__header-title.btns {
+  width: 160px;
+}
+
+.main-table__body {
+  font-size: 14px;
+  background-color: #FFF;
+}
+
+.null-body {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  background-color: #FFF;
+}
+
+.main-table__row {
+  max-height: 60px;
+}
+
+.main-table__row {
+  border-bottom: 1px solid rgba(200, 197, 209, 0.5);
+}
+
+.main-table__cell {
+  padding: 10px;
+}
+
+.main-table__id-cell {
+  color: var(--grey);
+}
+
+.main-table__created-time, .main-table__changes-time {
+  color: var(--grey);
+}
+
+.main-table__contacts-cell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 120px;
+}
+
+.main-table__contact {
+  position: relative;
+}
+
+.main-table__contact svg {
+  opacity: 0.7;
+  transition: opacity .2s ease-in-out, fill .2s ease-in-out;
+}
+
+.main-table__contact:hover svg{
+  opacity: 1;
+}
+
+.main-table__contact:active svg{
+  fill: var(--dark-purple);
+}
+
+.main-table__contact:focus-visible {
+  outline: 0;
+}
+
+.main-table__contact:focus-visible svg{
+  fill: var(--dark-purple);
+}
+
+.main-table__actions-cell {
+  width: 160px;
+  padding-left: 20px;
+}
+
+.main-table__contacts-more {
+  position: relative; 
+  cursor: pointer;
+  font-size: 8px
+}
+
+.main-table__contacts-more svg {
+  opacity: 0.7;
+  transition: opacity .2s ease-in-out;
+}
+
+.main-table__contacts-more svg circle {
+  transition: stroke .2s ease-in-out;
+}
+
+.main-table__contacts-more:hover svg {
+  opacity: 1;
+}
+.main-table__contacts-more:active svg circle{
+  stroke: var(--dark-purple);
+}
+
+.main-table__contact:focus-visible svg circle{
+  stroke: var(--dark-purple);
+}
+
+.main-table__contacts-more-text {
+  position: absolute;
+  top: 3px;
+  right: 11px;
+}
+
+.popup {
+  position: absolute;
+  white-space: nowrap;
+  text-align: center;
+  padding: 7px 17px;
+  bottom: 35px;
+  right: -66px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #333;
+  display: none;
+}
+
+.popup::after {
+  content: '';
+  position: absolute;
+  right: 76px;
+  bottom: -10px;
+  border: 5px solid transparent;
+  border-top: 7px solid #333;
+}
+
+.main-table__contacts-cell div:hover .popup {
+  display: block;
+}
+
+.main-table__contacts-cell svg {
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.change-btn {
+  margin-right: 30px;
+}
+
+.change-btn, .delete-btn {
+  position: relative;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  transition: color .2s ease-in-out, outline .2s ease-in-out;
+}
+
+.change-btn:hover, .delete-btn:hover {
+  color: var(--purple);
+}
+
+.change-btn:active, .delete-btn:active {
+  color: var(--grey);
+}
+
+.change-btn:focus-visible, .delete-btn:focus-visible {
+  outline: 1px solid var(--dark-purple);
+  outline-offset: 2px;
+  color: var(--dark-purple);
+}
+
+.change-btn::before, .delete-btn::before {
+  position: absolute;
+  left: -16px;
+  bottom: -4px;
+}
+
+.change-btn::before {
+  content: url('../imgs/edit.svg');
+}
+
+.delete-btn::before {
+  content: url('../imgs/cancel.svg');
+}
+
+
+.btn-append {
+  padding: 26.5px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  border: 1px solid var(--purple);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--purple);
+  font-weight: 600;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, outline .2s ease-in-out;
+}
+
+.btn-append svg {
+  margin-right: 10px;
+  transition: fill .2s ease-in-out;
+}
+
+.btn-append:hover {
+  color: var(--bright-grey);
+  background-color: var(--purple);
+}
+
+.btn-append:hover svg{
+  fill: var(--bright-grey);
+}
+
+.btn-append:active {
+  background-color: var(--dark-purple);
+  outline: 1px solid var(--dark-purple);
+}
+
+.btn-append:focus-visible {
+  background-color: var(--dark-purple);
+  color: var(--bright-grey);
+  outline: 1px solid var(--dark-purple);
+}
+
+.btn-append:focus-visible svg {
+  fill: var(--bright-grey);
+}
+
+/* FORMS */
+
+
+.close-btn {
+  padding: 0;
+  height: 29px;
+  width: 29px;
+  border: none;
+  background: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  transition: outline .2s ease-in-out;
+}
+
+.close-btn svg {
+  transition: fill .2s ease-in-out;
+}
+
+.close-btn:hover svg {
+  fill: var(--purple);
+}
+
+.close-btn:active svg {
+  fill: var(--dark-purple);
+}
+
+.close-btn:focus-visible {
+  outline: 1px solid var(--dark-purple);
+}
+
+.close-btn:focus-visible svg {
+  fill: var(--dark-purple);
+}
+
+.send-btn {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 17px 35px;
+  background-color: var(--purple);
+  color: #FFF;
+  margin-bottom: 5px;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, outline .2s ease-in-out;
+}
+
+.send-btn:hover {
+  background-color: var(--dark-purple);
+}
+
+.send-btn:active {
+  background-color: var(--dark-purple);
+  color: var(--grey);
+  outline: 1px solid var(--dark-purple);
+}
+
+.cancel-btn {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-bottom: 1px solid ;
+  background-color:rgba(0, 0, 0, 0);
+  transition: color .2s ease-in-out, outline .2s ease-in-out, border .2s ease-in-out;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  color: var(--purple);
+}
+
+.cancel-btn:active {
+  color: var(--dark-purple);
+}
+
+.cancel-btn:focus-visible {
+  outline: 1px solid var(--dark-purple);
+  outline-offset: 3px;
+  border: none;
+  color: var(--dark-purple);
+}
+
+.form {
+  max-width: 390px;
+  padding: 24px 30px 29px;
+  margin: auto;
+  background-color: #FFF;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  transition: visibility .5s ease-in-out, opacity .5s ease-in-out, transform .5s ease-in-out;
+}
+
+
+
+#new-client-form {
+  max-height: 360px;
+}
+
+.new-client-form__capture {
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.form-title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.client-form__input {
+  width: 100%;
+  padding-top: 7px;
+  border: none;
+  border-bottom: 1px solid #C8C5D1;
+  margin-bottom: 25px;
+  transition: outline .2s ease-in-out, border .2s ease-in-out;
+}
+
+.client-form__input:focus-visible {
+  outline: 0;
+  border: 1px solid var(--purple);
+  border-radius: 3px;
+}
+
+.client-form__label {
+  position: relative;
+}
+
+.client-form__placeholder {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  color: var(--grey);
+  font-size: 14px;
+  font-weight: 400;
+  transition: top .2s ease-in-out;
+}
+
+.client-form__placeholder-sign {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.client-form__input:focus + .client-form__placeholder, .client-form__input:not(:placeholder-shown) + .client-form__placeholder {
+  top: -30px;
+}
+
+.client-form__input:focus + .client-form .client-form__placeholder {
+  top: 0;
+  left: 10px;
+}
+
+
+.client-form__contact {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+  border: 1px solid var(--grey, #C8C5D1);
+}
+
+.client-form__contact select {
+  width: 110px;
+  appearance: none;
+  padding: 10px 12px;
+  border: none;
+  border-right: 1px solid var(--grey, #C8C5D1);
+  background-color: #E7E5EB;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: url("../imgs/arrow_back_ios.svg");
+  position: absolute;
+  right: 8px;
+  top: 10px;
+}
+
+
+.select-wrapper.is-active::after {
+  transform: rotate(180deg);
+}
+
+
+.client-form__contact input {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  background-color: inherit;
+}
+
+.client-form__input::placeholder {
+  color: var(--grey);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.client-form__add-contact-area {
+  margin: 0 -30px;
+  margin-bottom: 25px;
+  padding: 25px 30px;
+  background-color: rgba(200, 197, 209, .3);
+}
+
+.client-form__add-contact-btn {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color .2s ease-in-out;
+  color: #333;
+}
+
+.client-form__add-contact-btn svg {
+  transition: fill .2s ease-in-out;
+}
+
+.client-form__add-contact-btn:hover {
+  color: var(--purple);
+}
+
+.client-form__add-contact-btn:active {
+  color: var(--dark-purple);
+}
+
+.client-form__add-contact-btn:active svg {
+  fill: var(--dark-purple);
+}
+
+.client-form__add-contact-btn:focus-visible {
+  outline: 1px solid var(--dark-purple);
+  outline-offset: 6px;
+}
+
+.popup-fade::before {
+	content: '';
+	background: #333;
+	position: fixed; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	opacity: 0.6;
+	z-index: 9;
+}
+
+.popup-fade {
+  animation: MaxOpacity .5s ease-in-out;
+}
+
+
+@keyframes MaxOpacity {
+  0% {opacity: 0;}
+  100% {opacity: 1}
+}
+
+@keyframes MinOpacity {
+  0% {opacity: 0.6;}
+  100% {opacity: 0}
+}
+
+
+#delete-form {
+  z-index: 100;
+  text-align: center;
+  max-height: 167px;
+}
+
+
+.delete-form__title {
+  margin-bottom: 11px;
+}
+
+.delete-form__text {
+  margin: 0 auto 25px;
+  max-width: 275px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#edit-form {
+  height: 350px;
+  min-height: 400px;
+  max-height: 90vh;
+}
+
+
+.edit-form__capture {
+  margin-bottom: 30px;
+  align-items: end;
+}
+
+#edit-form .edit-form__capture .form-title {
+  margin-right: 10px;
+}
+
+.edit-form__id {
+  color: var(--grey);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.client-form__contact-close {
+  position: absolute;
+  height: 100%;
+  width: 27px;
+  right: 0;
+  border: none;
+  border-left: 1px solid #C8C5D1;
+  background: #E7E5EB;
+  transition: outline .2s ease-in-out;
+}
+
+.client-form__contact-close svg {
+  transition: fill .2s ease-in-out;
+}
+
+.client-form__contact-close:hover svg {
+  fill: var(--purple);
+}
+
+.client-form__contact-close:active svg {
+  fill: var(--dark-purple);
+}
+
+.client-form__contact-close:focus-visible {
+  outline: 1px solid var(--dark-purple);
+}
+
+.error {
+  font-size: 40px;
+  font-weight: 600;
+  animation: all 10s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes all {
+  0%  { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}

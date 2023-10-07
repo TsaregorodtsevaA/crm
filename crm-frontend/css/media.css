@@ -1,0 +1,58 @@
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .header {
+    padding: 8px 0;
+  }
+
+  .header__input {
+    display: none;
+  }
+
+  .header__logo {
+    margin: 0 auto;
+  }
+
+  .header__logo svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .main {
+    padding: 30px 0;
+  }
+
+  .main-title {
+    font-size: 18px;
+  }
+
+  .form {
+    padding: 24px 15px 29px;
+    max-width: 270px;
+  }
+
+  #new-client-form {
+    max-height: 333px;
+  }
+
+  .client-form__add-contact-area {
+    padding: 8px;
+    margin: 0 -15px;
+    margin-bottom: 25px;
+  }
+
+  #edit-form .edit-form__capture .form-title {
+    width: 125px;
+  }
+
+  .edit-form__capture {
+    align-items: center;
+  }
+
+  #edit-form .client-form__add-contact-area {
+    padding: 25px 8px;
+  }
+
+}
