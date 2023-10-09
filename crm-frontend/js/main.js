@@ -30,6 +30,9 @@ const fioBtn = document.querySelector('.main-table__fio-btn');
 const createdBtn = document.querySelector('.main-table__created-btn');
 const editedBtn = document.querySelector('.main-table__edited-btn');
 const search = document.querySelector('.header__input');
+const nullDB = document.createElement('div');
+nullDB.classList.add('message')
+nullDB.textContent = 'В базе данных пусто. Добавьте хотя бы 1 клиента.'
 
 
 function newContact() {
@@ -223,6 +226,8 @@ let preloader = true;
 async function renderClients(arr) {
   tableBody.innerHTML = '';
   if((await arr).length === 0) {
+    nullTableBody.innerHTML = '';
+    nullTableBody.append(nullDB)
     preloader = false;
     return;
   }
